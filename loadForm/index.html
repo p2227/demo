@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>几种不同方式载入JSON数据到FORM测试</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/icon.css">
+    <style>
+        form{
+            width:200px;
+            float:left;
+        }
+    </style>
+</head>
+<body>
+   <input type="button" id="runTest" value="进行测试"/>
+   <div id="result"></div>
+   <form id="form1"></form>
+   <form id="form2"></form>
+   <form id="form3"></form>
+   <form id="form4"></form>
+   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.3.min.js"></script>
+   <script src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+   <script src="loadForm.js"></script>
+<script>
+    $(function(){
+        //准备工作，渲染页面
+        var ipt = [],dd={};
+        for(var i=0;i<=100;i++){
+            ipt.push('<input name="value',i,'"/><br/>');
+            dd["value"+i]=i;
+        }
+        $("form").html(ipt.join(""));
+
+
+        /*
+        *小工具：对输入的函数，返回其执行的时间差
+        * */
+        function TimeDiff(func){
+            if(func && "function" === typeof func) {
+                var timeStart=new Date;
+                func();
+                var timeEnd=new Date;
+                return timeEnd.getTime()-timeStart.getTime();
+            }
+            return -1;
+        };
+
+        //利用数组配置，可随时增加测试用例
+        var testCase = [{
+            desc:"针对数据，一个个选择元素进行填充",
+            func:function(){
+                $.each(dd,function(key,val){
+                    $("input[name='"+key+"']","#form1").val(val);
+                });
+            }
+        },{
+            desc:"先选择所有的元素，再针对数据进行填充",
+            func:function(){
+                $("input[name]","#form2").each(function(key,val){
+                    this.value = dd[this.name];
+                });
+            }
+        },{
+            desc:"easyui自带",
+            func:function(){
+                $("#form3").form('load',dd);
+            }
+        },{
+            desc:"p2227改进",
+            func:function(){
+                $("#form4").loadForm({data:dd});
+            }
+        }];
+
+
+
+        $("#runTest").click(function(){
+            var r = [];
+            $.each(testCase,function(idx,val){
+                r.push(val.desc,":",TimeDiff(val.func),"<br/>")
+            })
+            $("#result").html(r.join(""));
+        });
+    });
+</script>
+</body>
+</html>
