@@ -1,0 +1,25 @@
+#wrap{
+    width:520px;
+    height:520px;
+    margin:0 auto;
+}
+
+.attendFont{
+    color:red;
+}
+
+#mainArea{
+    width:480px;
+    height:500px;
+    margin:0 auto;
+    background:url('./img/road.gif') repeat-y;
+}
+
+#otherElement{
+    display:none;
+}
+
+
+.elemCar{
+    position: relative;
+}
