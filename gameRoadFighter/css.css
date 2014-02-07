@@ -13,12 +13,19 @@
     height:500px;
     margin:0 auto;
     background:url('./img/road.gif') repeat-y;
+    overflow: hidden;
+    position: relative;
 }
 
 #otherElement{
-    display:none;
+    position:absolute;
+    left:-99999px;
+    top:-999999px;
 }
 
+.enemCar{
+    position: absolute;
+}
 
 .elemCar{
     position: relative;
