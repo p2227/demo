@@ -103,7 +103,6 @@ var app = {
     //清理计时器
         app.state = false;
         app.stateElem.innerHTML = "开始";
-        console.log("11111111111");
         clearTimeout(app.appHandle);
     }
     ,bindEvent:function(){
