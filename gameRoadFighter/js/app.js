@@ -61,7 +61,7 @@ var app = {
                 }
             }
 
-            app.mainArea.style.backgroundPosition = "0 -" + app.mainPos + "px";
+            app.mainArea.style.backgroundPosition = "0 " + app.mainPos + "px";
             app.mainPos = app.mainPos > app.areaHeight ? 0 : app.mainPos + 2;
 
             app.speedElem.innerHTML = Math.round(app.speed);
