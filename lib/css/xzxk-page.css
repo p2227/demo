@@ -1,0 +1,156 @@
+#scrollDom{
+	position:relative;
+	padding:3px;
+	background:#FFFFFF;
+	overflow-y:scroll;
+}
+
+div.zlsh-tip {
+	position: absolute;
+	left: 10%;
+	top: 50%;
+	margin-left: -15px;
+	margin-top: -15px;
+}
+
+.table_browse td		{ min-height:25px; }
+.table_title th{
+	text-align: center;
+}
+
+
+.easyui-layout input,
+input.combo-text,
+input.easyui-numberbox,
+input.validatebox-text{
+	margin:0;
+}
+
+.easyui-layout input[type=radio],
+.easyui-layout input[type=checkbox]{
+	margin:2px;
+}
+
+
+.table_list,
+.table_list th,
+.table_list td      { border:1px solid #97b4d6;word-wrap:break-word;overflow:hidden; }
+.table_list         { table-layout:fixed; margin:0; width:100%;border-collapse:collapse;}
+.table_list th      { background:#edf6ff; padding-right:5px; font-size:13px; font-weight:normal; text-align:right; }
+.table_list td      { font-size:12px; padding:3px 6px;}
+
+th.list_head{
+    height:24px;
+    text-indent:1em;
+    text-align:center;
+    font-weight:bolder;
+    font-size:14px ;
+    color:#416aa3 ;
+}
+
+tr.list_colspan>th{
+    height:24px;
+    text-indent:2em;
+    text-align:left;
+    font-weight:bold;
+    font-size:14px;
+}
+
+tr.list_colspan>th:hover{
+    background:#cde6ff;
+    cursor:pointer;
+}
+
+.bitian{ /*表单项目里面的必填项*/
+    color:red;
+}
+
+.lightMask
+{
+	position: absolute;
+	left: 0;
+	top: 0;	
+	z-index:100;
+	background-color:#eaeaea; /*一定要有背景颜色，否则IE下无效*/
+	opacity:0.3;
+	filter:alpha(opacity=40);
+}
+
+
+.regReadOnly{
+	color:black;
+	/*background-color:#EDF6FF;*/
+	border: medium none;
+}
+
+#span-wf,.button-float-right{
+	display:none;
+	float:right;
+	+position:absolute;
+	+right:2px;
+	+top:2px;
+}
+
+.button-float-left{
+	display:none;
+	float:left;
+	+position:absolute;
+	+left:2px;
+	+top:2px;
+}
+.task-menu{
+	width:100px;
+	font-size:13px;
+}
+.line_ht{ line-height:30px ; }
+.line_ht td{border-bottom:1px #ccc dashed; text-align:left; padding-left:20px;}
+
+
+.wds-layout-body{
+	height: 100%;
+	padding:0;
+	margin:0;
+	overflow:hidden;
+	border: none;
+}
+
+.wds-layout-button{
+	border-top:1px solid #97b4d6;
+	overflow:hidden;
+	width:100%;
+	height:30px;
+	padding:1px 3px;
+	background:#F0F5FF;
+}
+
+.wds-layout-scroll{
+	_margin-right: 18px;/*IE6下面的垂直滚动条宽度是计算在外面的，要修正*/
+	overflow-x:hidden;
+	overflow-y:scroll;
+}
+
+.wds-layout-south{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+}
+
+.wds-layout-north{
+	position:relative;
+	padding:2px;
+	background:#FFFFFF;
+	top:0px;
+	left:0px;
+}
+
+.wds-background-hr{
+	background:#97b4d6;
+}
+
+.wds-table-close th{ text-align:center;}
+.wds-table-close td{ vertical-align:top;text-align:center;}
+.wds-table-close textarea{ overflow-y:auto;}
+
+.table_list{
+	+width:98%;/*IE7下面的登记表格的宽度过宽，要控制*/
+}

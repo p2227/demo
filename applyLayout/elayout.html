@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <!--easyui-->
+    <link rel="stylesheet" type="text/css" href="../lib/jqueryEasyUI/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../lib/jqueryEasyUI/themes/icon.css">
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.3.min.js"></script>
+    <script type="text/javascript" src="../lib/jqueryEasyUI/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../lib/jqueryEasyUI/easyui-lang-zh_CN.min.js"></script>
+
+    <!--validator-->
+    <link rel="stylesheet" type="text/css" href="http://p2227.github.io/easyValidator/bin/easyValidator.css">
+    <script type="text/javascript" src="http://p2227.github.io/easyValidator/bin/easyValidator.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../lib/css/xzxk-page.css">
+
+    <!--operamasks-->
+    <link href="../lib/om/css/default/om-default.css" rel="stylesheet" type="text/css">
+    <script src="../lib/om/js/operamasks-ui.min.js" type="text/javascript"></script>
+    <script src="../lib/om/js/operamasks-ui.fix.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var commonData={
+            baseUri:'/applyLayout'
+        }
+    </script>
+    <title>业务登记表</title>
+</head>
+<body class="easyui-layout">
+<div region="center">
+<form id="bookInForm" name="bookInForm" action="" method="post">
+<input type="hidden" id="regId" name="regId" value="" fillback="1">
+<input type="hidden" id="regCode" name="regCode" value="" fillback="1">
+<input type="hidden" id="taskId" name="taskId" value="" fillback="1">
+<input type="hidden" id="infoId" name="infoId" value="" fillback="1">
+<input type="hidden" id="objId" name="objId" value="" fillback="1">
+<input type="hidden" id="compNo" name="compNo" value="">
+<input type="hidden" name="licDocNoOld" value="">
+<input type="hidden" id="funcCode" name="funcCode" value="" fillback="1">
+<input type="hidden" id="stepId" name="stepId" value="" fillback="1">
+<input type="hidden" id="appType" name="appType" value="XK-S140-001">
+<input type="hidden" id="unitFuncId" name="unitFuncId" value="" fillback="1">
+<input type="hidden" id="unitProcId" name="unitProcId" value="402881623ff15d89013ff4f7cc760057">
+<input type="hidden" id="DUTY" name="DUTY" style="display: none;">
+<table width="90%" class="table_list" id="regTable">
+    <tr style="height: 1px;">
+        <th style="width: 11.3%"></th>
+        <th style="width: 22%"></th>
+        <th style="width: 11.3%"></th>
+        <th style="width: 22%"></th>
+        <th style="width: 11.3%"></th>
+        <th style="width: 22%"></th>
+    </tr>
+    <tr>
+        <th class="list_head" colspan="6">业务登记表</th>
+    </tr>
+    <tr>
+        <th>企业名称:<label class="bitian">*</label></th><td colspan="3"><input class="easyui-validatebox" name="unitName" id="unitName" value="" required="true" style="width: 99%"></td>
+        <th>邮政编码:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode" id="unitZipCode" validtype="format['邮政编码']" maxlength="6" value=""></td>
+    </tr>
+    <tr>
+        <th>企业名称:<label class="bitian">*</label></th><td colspan="3"><input class="easyui-validatebox" name="unitName" value="" required="true" style="width: 99%"></td>
+        <th>邮政编码:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode" validtype="format['邮政编码']" maxlength="6" value=""></td>
+    </tr>
+    <tr>
+        <th>企业名称:<label class="bitian">*</label></th><td colspan="3"><input class="easyui-validatebox" name="unitName" value="" required="true" style="width: 99%"></td>
+        <th>邮政编码:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode" validtype="format['邮政编码']" maxlength="6" value=""></td>
+    </tr>
+    <tr>
+        <th>企业名称:<label class="bitian">*</label></th><td colspan="3"><input class="easyui-validatebox" name="unitName" value="" required="true" style="width: 99%"></td>
+        <th>邮政编码:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode" validtype="format['邮政编码']" maxlength="6" value=""></td>
+    </tr>
+    <tr>
+        <th>企业名称:<label class="bitian">*</label></th><td colspan="3"><input class="easyui-validatebox" name="unitName" value="" required="true" style="width: 99%"></td>
+        <th>邮政编码:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode" validtype="format['邮政编码']" maxlength="6" value=""></td>
+    </tr>
+    <tr>
+        <th>下拉字典:<label class="bitian">*</label></th><td><input class="easyui-combobox" name="unitZipCode" required="true"></td>
+        <th>下拉字典:<label class="bitian">*</label></th><td><input class="easyui-combobox" name="unitZipCode" required="true"></td>
+        <th>下拉字典:<label class="bitian">*</label></th><td><input class="easyui-combobox" name="unitZipCode" required="true"></td>
+    </tr>
+    <tr>
+        <th>下拉字典:<label class="bitian"></label></th><td><input class="easyui-combobox" name="unitZipCode"></td>
+        <th>下拉字典:<label class="bitian"></label></th><td><input class="easyui-combobox" name="unitZipCode"></td>
+        <th>下拉字典:<label class="bitian"></label></th><td><input class="easyui-combobox" name="unitZipCode"></td>
+    </tr>
+    <tr>
+        <th>日期填空:<label class="bitian"></label></th><td><input class="easyui-datebox" name="unitZipCode"></td>
+        <th>日期填空:<label class="bitian"></label></th><td><input class="easyui-datebox" name="unitZipCode"></td>
+        <th>日期填空:<label class="bitian"></label></th><td><input class="easyui-datebox" name="unitZipCode"></td>
+    </tr>
+    <tr>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+    </tr>
+    <tr>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+    </tr>
+    <tr>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+    </tr>
+    <tr>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+    </tr>
+    <tr>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+    </tr>
+    <tr>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+    </tr>
+    <tr>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+    </tr>
+    <tr>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+    </tr>
+    <tr>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+    </tr>
+    <tr>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+    </tr>
+    <tr>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+    </tr>
+    <tr>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+        <th>业务填空:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode"></td>
+    </tr>
+    <tr>
+        <th>业务填空:<label class="bitian"></label></th>
+        <td colspan="5"><textarea class="easyui-validatebox" style="width:98%" rows="5"></textarea></td>
+    </tr>
+</table>
+    </form>
+</div>
+<div region="south">
+    <a class="easyui-linkbutton">按钮</a>
+    <a class="easyui-linkbutton">按钮</a>
+    <a class="easyui-linkbutton">按钮</a>
+</div>
+<script type="text/javascript">
+
+    $.getJSON("combobox_data.json",function(msg){
+        $(".easyui-combobox").combobox("loadData",msg)
+    })
+</script>
+</body>
+</html>
