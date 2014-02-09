@@ -13,6 +13,7 @@
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.3.min.js"></script>
 <script type="text/javascript" src="../lib/jqueryEasyUI/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="../lib/jqueryEasyUI/easyui-lang-zh_CN.min.js"></script>
+<script type="text/javascript" src="../lib/common.js"></script>
 <script type="text/javascript">
     var conf = {
         width:500,
@@ -42,7 +43,7 @@
 
     document.getElementById("pRun").onclick = function(){
         $.getJSON("../lib/data.json",function(msg){
-            console.log("不渲染title属性的时间："+TimeDiff(function(){
+            console.log("渲染title属性的时间："+TimeDiff(function(){
                 for(var i=0;i<20;i++){
                     $("<table></table>").appendTo('body').datagrid(conf).datagrid("loadData",msg)
                 };
