@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <!--easyui-->
+    <link rel="stylesheet" type="text/css" href="../lib/jqueryEasyUI/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../lib/jqueryEasyUI/themes/icon.css">
+    <title>JS模板</title>
+</head>
+<body class="wds-layout-body">
+<div id="center-layout" class="wds-layout-scroll wds-layout-north">
+    <form id="bookInForm" name="bookInForm" action="" method="post">
+             <table id="tb"></table>
+    </form>
+</div>
+<div id="south-layout" class="wds-layout-button wds-layout-south">
+    <a class="easyui-linkbutton" id="submitSubject">提交（序列化）</a>
+    <textarea id="res" style="width:500px;height:120px;"></textarea>
+</div>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.3.min.js"></script>
+<script type="text/javascript" src="../lib/jqueryEasyUI/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../lib/jqueryEasyUI/easyui-lang-zh_CN.min.js"></script>
+<script type="text/javascript" src="jsTemplate.js"></script>
+<script type="text/javascript">
+    $("#tb").datagrid(jsTempGridConf);
+    $("#submitSubject").click(function(){
+         $("#res").val($("#bookInForm").serialize());
+    })
+</script>
+</body>
+</html>

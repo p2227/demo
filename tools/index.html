@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<div id="d1"></div>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.3.min.js"></script>
+<script>
+$.getJSON("../jsTemplate/subject.json",function(msg){
+    for(var k in msg.rows){
+        msg.rows[k].subjectContent = msg.rows[k].subjectContent.replace(/[\u4e00-\u9fa5]/g,function(){
+            return String.fromCharCode(0x4e00 + (0x9fa5 - 0x4e00)*Math.random())
+        });
+        msg.rows[k].subjectContent = msg.rows[k].subjectContent.replace(/[\u4e00-\u9fa5]/g,function(){
+            return String.fromCharCode(0x4e00 + (0x9fa5 - 0x4e00)*Math.random())
+        });
+    }
+
+    $("#d1").html(JSON.stringify(msg));
+})
+
+</script>
+</body>
+</html>
