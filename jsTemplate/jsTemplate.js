@@ -1,5 +1,5 @@
 
-jsParser = {
+var jsParser = {
     //模板库
     template:{
         /* @a{b}，题目模板中，若a为空，则取数据上属性为b的值；否则取了数据上属性为b的值后，再对照取a子模板中相应的值
@@ -19,6 +19,8 @@ jsParser = {
         //"JD-SUB-3":'<select name="@{subjectId}" style="width:90%" required="@s{subjectType}" panelHeight="60" selectType="@s{selectType}">@{td4BizAnsweritemList}</select>',
         "JD-SUB-3":'<input type="checkbox" id="@{subjectId}keyCheck" selectType="@s{selectType}" @f{selectYesNo:pkAnswer} @f{boxDisable1:reasonableGap} title="勾选则表示该项达标/有分，不勾选则表示该项不达标/无分"/>\
 					<input type="hidden" name="@{subjectId}" value="@{pkAnswer}" chkbox="@{subjectId}keyCheck"/>',
+        "JD-SUB-31":'<label><input type="radio" name="@{subjectId}" id="@{subjectId}keyCheck1" selectType="@s{selectType}" @f{selectYesNo:pkAnswer} @f{boxDisable1:reasonableGap} value="1"/>是</label>&nbsp;\
+					<label><input type="radio" name="@{subjectId}" id="@{subjectId}keyCheck0" selectType="@s{selectType}" @f{selectYesNo:pkAnswer} @f{boxDisable1:reasonableGap} value="0"/>否</label>&nbsp;',
         //HTML,表头表尾
         "JD-SUB-5":'<input class="easyui-datetimebox" name="@{subjectId}quanDate" value="@{quanDate}" @s{subjectType} baseDataType="@{baseDataType}" showSeconds="false"/>\
 					<input type="hidden" id="@{subjectId}" name="@{subjectId}" value="@{answerValue}"/>',
@@ -487,8 +489,6 @@ jsParser = {
     }
 };
 
-
-
 var jsTempGridConf = {
     url:'subjects.json',
     queryParams:{
@@ -500,7 +500,7 @@ var jsTempGridConf = {
         [[
             {field:"showOrder",title:"序号",width:30,align:"center",formatter:jsParser.qGridShowOrder},
             {field:'class2Name',title:'项目',width:80},
-            {field:'subjectContent',title:'题目内容',width:400,formatter:jsParser.qGridContent},
+            {field:'subjectContent',title:'题目内容',width:300,formatter:jsParser.qGridContent},
             {field:'selectTypeValue',title:'重要性',width:60,formatter:jsParser.qGridSelectTypeValue},
             {field:'scoreValue',title:"答案",width:140,align:'center',formatter:jsParser.qGridInput},
             {field:'reaGap',title:"合理缺项",width:50,align:'center',formatter:jsParser.qGridReaGap}
