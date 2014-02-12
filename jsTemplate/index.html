@@ -15,7 +15,6 @@
 </div>
 <div id="south-layout" class="wds-layout-button wds-layout-south">
     <a class="easyui-linkbutton" id="submitSubject">提交（序列化）</a>
-    <a class="easyui-linkbutton" id="changeView">换一种表现形式</a>
     <textarea id="res" style="width:500px;height:120px;"></textarea>
 </div>
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.3.min.js"></script>
@@ -27,21 +26,6 @@
     $("#submitSubject").click(function(){
          $("#res").val($("#bookInForm").serialize());
     });
-    $("#changeView").click(function(){
-        $("#tb").datagrid($.extend( jsTempGridConf,{
-                    columns:
-                            [[
-                                {field:"showOrder",title:"序号",width:30,align:"center",formatter:jsParser.qGridShowOrder},
-                                {field:'class2Name',title:'项目',width:80},
-                                {field:'subjectContent',title:'题目内容',width:400,formatter:jsParser.qGridContent},
-                                {field:'selectTypeValue',title:'重要性',width:60,formatter:jsParser.qGridSelectTypeValue},
-                                {field:'scoreValue',title:"答案",width:140,align:'center',formatter:jsParser2.qGridInput},
-                                {field:'reaGap',title:"合理缺项",width:50,align:'center',formatter:jsParser.qGridReaGap}
-                            ]],
-                }
-
-        ));
-    })
 </script>
 </body>
 </html>

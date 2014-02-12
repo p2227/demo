@@ -491,9 +491,6 @@ var jsParser = {
 
 var jsTempGridConf = {
     url:'subjects.json',
-    queryParams:{
-        d:(new Date).getTime()
-    },
     title:"题目表",
     method:'get',
     columns:
