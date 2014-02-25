@@ -117,6 +117,7 @@ var app = {
         };
 
         document.onkeyup = function(e){
+            e = e || window.event;
             var keyCode = e.keyCode || e.which;
             switch(keyRela[keyCode]){
                 case "acce":
@@ -142,6 +143,7 @@ var app = {
         };
 
         document.onkeydown  = function(e){
+            e = e || window.event;
             var keyCode = e.keyCode || e.which;
             switch(keyRela[keyCode]){
                 case "start":
