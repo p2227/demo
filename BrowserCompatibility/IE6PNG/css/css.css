@@ -1,0 +1,7 @@
+#aico150{
+	width:256px;
+	height:256px;
+	background:url('../images/aico150.png') no-repeat;	
+	_background:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="./images/aico150.png");
+}
