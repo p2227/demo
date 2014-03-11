@@ -1,0 +1,43 @@
+﻿
+<html>
+<head>
+<style>
+	#myTop{
+		height:1000px;
+	}	
+</style>
+</head>
+<body>
+		<div id="myTop">网页头部检测</div>
+		<span>元素事件</span>
+    <a href="javascript:void(0)" onclick="notReturn();">void:IE6下点击我不转跳</a>
+    <a href="javascript:void(0)" onclick="returnFalse();">void:IE6下点击我不转跳</a>
+    <a href="#" onclick="notReturn();">#:IE6下点击我转跳</a>
+    <a href="#" onclick="returnFalse();">#:IE6下点击我转跳</a>
+		<hr/>
+		<span>绑定事件</span>
+    <a id="vn" href="javascript:void(0)">void:IE6下点击我不转跳</a>
+    <a id="vr" href="javascript:void(0)">void:IE6下点击我转跳</a>
+    <a id="jn" href="#">#:IE6下点击我转跳</a>
+    <a id="jr" href="#">#:IE6下点击我转跳</a>
+    <hr/>
+		<span>锚点</span>
+    <a href="#">#:IE6下点击我跳到头部</a>
+    <a href="javascript:void(0)">#:IE6下点击我不会跳到头部</a>
+    <script>
+		function returnFalse(){
+			window.location.href="http://p2227.cnblogs.com/";
+			return false;
+		}
+		
+		function notReturn(){
+			window.location.href="http://p2227.cnblogs.com/";
+		}
+		
+		document.getElementById("vn").onclick = notReturn;
+		document.getElementById("vr").onclick = returnFalse;
+		document.getElementById("jn").onclick = notReturn;
+		document.getElementById("jr").onclick = returnFalse;
+   </script>
+</body>
+</html>
