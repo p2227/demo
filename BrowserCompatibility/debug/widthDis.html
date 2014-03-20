@@ -1,0 +1,40 @@
+<!DOCTYPE Html>
+<html>
+<head>
+    <style>
+        html,body{
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            overflow: scroll;
+        }
+        div{
+            margin:0px;
+            padding:0px;
+            background:red;
+        }
+
+        .test{
+            width:700px;
+            margin:10px;
+            padding:10px;
+            border:10px solid #eee;
+        }
+
+    </style>
+</head>
+<body>
+<div id="d" class="test"><div>inner</div></div>
+<hr/>
+<table id="tab" class="test"><tbody><tr><td id="tabTd"></td></tr></tbody></table>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    var d = document.getElementById("d");
+    var t = document.getElementById("tab");
+    var td = document.getElementById("tabTd");
+    d.innerHTML = $(d).width() + ";clientWidth:" + d.clientWidth +";offsetWidth:" + d.offsetWidth +";scrollWidth:"+ d.scrollWidth;
+    td.innerHTML = $(t).width() +";clientWidth:" + t.clientWidth +";offsetWidth:" + t.offsetWidth +";scrollWidth:"+ t.scrollWidth;
+</script>
+</body>
+</html>
