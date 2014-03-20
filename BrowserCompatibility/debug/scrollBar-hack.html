@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="xzxk-page.css">
     <style>
         .table_list{
-            width:auto;
+            +width:auto;
         }
     </style>
     <!--operamasks-->
@@ -54,7 +54,7 @@
         <th class="list_head" colspan="6">业务登记表</th>
     </tr>
     <tr>
-        <th>企业名称:<label class="bitian">*</label></th><td colspan="3"><input class="easyui-validatebox" name="unitName" id="unitName" value="" required="true" style="width: 99%"></td>
+        <th>企业名称:<label class="bitian">*</label></th><td colspan="3"><span id="jQTest"></span></td>
         <th>邮政编码:<label class="bitian"></label></th><td><input class="easyui-validatebox" name="unitZipCode" id="unitZipCode" validtype="format['邮政编码']" maxlength="6" value=""></td>
     </tr>
     <tr>
@@ -179,6 +179,8 @@
     $.getJSON("combobox_data.json",function(msg){
         $(".oma-Combo").omCombo("setData",msg)
     });
+
+    $("#jQTest").html("" + $.support.boxModel);
 </script>
 </body>
 </html>

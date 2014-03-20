@@ -35,7 +35,7 @@ input.validatebox-text{
 .table_list,
 .table_list th,
 .table_list td      { border:1px solid #97b4d6;word-wrap:break-word;overflow:hidden; }
-.table_list         { table-layout:fixed; margin:0; width:auto;border-collapse:collapse;}
+.table_list         { table-layout:fixed; margin:0; width:100%;border-collapse:collapse;}
 .table_list th      { background:#edf6ff; padding-right:5px; font-size:13px; font-weight:normal; text-align:right; }
 .table_list td      { font-size:12px; padding:3px 6px;}
 
