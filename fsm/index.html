@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <title>状态机与工作流</title>
+  <meta charset="UTF-8">
+</head> 
+ 
+<body> 
+
+  <div>
+  	<input id="coder" type="button" value="新建审批"/>	
+  	<input id="manage" type="button" value="项目经理"/>	
+  	<input id="director" type="button" value="项目总监"/>	
+  	<input id="finance" type="button" value="财务"/>	
+  	<input id="supple" type="button" value="补资料"/>
+  </div>
+
+	<textarea id="op" rows="20" cols="100"></textarea>
+  
+  <script src="state-machine.min.js"></script>
+  <script>
+  var g = function(id){
+  	 return document.getElementById(id);
+  }
+  
+  var coder = g("coder"),manage = g("manage"),director = g("director"),finance = g("finance"),supple = g("supple");
+  var op = g("op");
+  
+	var log = function(str){
+		op.value += (str + "\n");
+		
+	}
+  
+  var fsm = StateMachine.create({
+
+    events: [
+    	{ name: 'start', from: 'none',   to: 'start'  },
+      { name: 'coder', from: 'start',   to: 'coder'  },
+      { name: 'manage',  from: 'coder',  to: 'manage' },
+      { name: 'director', from: 'manage',  to: 'director'    },
+      { name: 'finance', from: 'director', to: 'start'    },
+      { name: 'supple',  from: ['coder','manage','director','finance',],    to: 'coder' }
+    ],
+
+    callbacks: {
+      onbeforecoder: function(event, from, to) { log("码农开始报销"); },
+      oncoder:       function(event, from, to) { log("码农提交一个报销");       },
+
+      onbeforemanage:  function(event, from, to) { log("PM开始审批");  },
+      onbeforedirector: function(event, from, to) { log("总监开始审批");  },
+      onbeforefinance:  function(event, from, to) { log("财务开始审批");  },
+      onbeforesupple: function(event, from, to) { log("操蛋！忘记交***资料");  },
+
+      onmanage:        function(event, from, to) { log("PM审批完成");         },
+      ondirector:       function(event, from, to) { log("总监审批完成");        },
+      onfinance:        function(event, from, to) { log("财务完成，又一个新审批");         },
+      onsupple:       function(event, from, to) { log("补交完资料，又要从PM开始审批");        },
+
+      onchangestate: function(event, from, to) { 
+      	log("状态改变: " + from + " to " + to); 
+      	coder.disabled = fsm.cannot("coder");
+      	manage.disabled = fsm.cannot("manage");
+      	director.disabled = fsm.cannot("director");
+      	finance.disabled = fsm.cannot("finance");
+      	supple.disabled = fsm.cannot("supple");
+     	}
+    }
+  });
+  
+  document.onclick =function (e){
+  	e = window.event || e;
+  	var dom = e.target;
+  	if(dom.tagName.toUpperCase() === "INPUT" &&!dom.disabled && dom.id && fsm[dom.id]){
+  		fsm[dom.id]()
+  	}
+  }
+	fsm.start();
+  
+  </script>
+
+</body> 
+</html>
